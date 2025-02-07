@@ -16,7 +16,8 @@
 	},
 	"scripts": {
 		"lint": "eslint --max-warnings=0 --report-unused-disable-directives .",
-		"prepare": "rm -rf dist && tsc -b",
+		"prepare": "npm run debug:prepare",
+		"debug:prepare": "env && which node npm pnpm tsc && tsc -v && tsc --showConfig",
 		"test": "NODE_OPTIONS='--no-warnings --experimental-vm-modules' npx jest"
 	},
 	"dependencies": {
